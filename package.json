@@ -1,0 +1,17 @@
+{
+  "name": "ebridge-bot-server",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:pm2:testnet": "pm2 start ecosystem.config.js --only ebridge-telegram-bot-server-test --no-daemon",
+    "start:pm2:mainnet": "pm2 start ecosystem.config.js --only ebridge-telegram-bot-server --no-daemon"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "socks5-https-client": "^1.2.1"
+  }
+}
