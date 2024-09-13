@@ -10,7 +10,7 @@ const configMap = {
   },
   testnet: {
     appUrl: "https://test.ebridge.exchange/bridge",
-    bridgeUrl: "https://t.me/eBridgeTest_bot/eBridge",
+    bridgeUrl: "https://test.ebridge.exchange/bridge",
     twitterUrl: "https://x.com/eBridge_Web3",
     botToken: process.env.TELEGRAM_BOT_TOKEN_TESTNET,
     serviceUrl: "https://test.ebridge.exchange",
