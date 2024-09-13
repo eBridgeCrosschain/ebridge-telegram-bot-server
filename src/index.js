@@ -41,10 +41,8 @@ bot.onText(/\/start/, async (msg) => {
                 },
               },
               {
-                text: "Withdraw",
-                web_app: {
-                  url: config.twitterUrl,
-                },
+                text: " Twitter",
+                url: config.twitterUrl,
               },
             ],
           ],
