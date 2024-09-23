@@ -5,7 +5,11 @@ const config = require("./config");
 const path = require('path');
 
 const bot = new TelegramBot(config.botToken, {
-  polling: false,
+  polling: true,
+	request: {
+	  url: undefined,
+	  proxy: "http://127.0.0.1:7890",
+	},
 });
 // {
 // 	polling: true,
@@ -30,7 +34,6 @@ bot.onText(/\/start/, async (msg) => {
     const relativePath = 'images/banner-img.png';
 		const absolutePath = path.resolve(__dirname, relativePath);
     bot.sendPhoto(chatId, absolutePath, {
-      parse_mode: "Markdown",
 			caption:
 				'eBridge enables secure, fast, and cost-effective asset transfers between aelf and other blockchain ecosystems.',
 			reply_markup: {
