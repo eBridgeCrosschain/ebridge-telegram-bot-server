@@ -2,14 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const TelegramBot = require("node-telegram-bot-api");
 const config = require("./config");
-const path = require('path');
+const path = require("path");
 
 const bot = new TelegramBot(config.botToken, {
-  polling: true,
-	request: {
-	  url: undefined,
-	  proxy: "http://127.0.0.1:7890",
-	},
+  polling: false,
 });
 // {
 // 	polling: true,
@@ -31,13 +27,13 @@ console.log("webhookUrl:", webhookUrl);
 bot.onText(/\/start/, async (msg) => {
   try {
     const chatId = msg.chat.id;
-    const relativePath = 'images/banner-img.png';
-		const absolutePath = path.resolve(__dirname, relativePath);
+    const relativePath = "images/banner-img.png";
+    const absolutePath = path.resolve(__dirname, relativePath);
     bot.sendPhoto(chatId, absolutePath, {
-			caption:
-				'eBridge enables secure, fast, and cost-effective asset transfers between aelf and other blockchain ecosystems.',
-			reply_markup: {
-				inline_keyboard: [
+      caption:
+        "eBridge enables secure, fast, and cost-effective asset transfers between aelf and other blockchain ecosystems.",
+      reply_markup: {
+        inline_keyboard: [
           [
             {
               text: "Bridge",
@@ -49,9 +45,7 @@ bot.onText(/\/start/, async (msg) => {
           [
             {
               text: "Join Community",
-              web_app: {
-                url: config.communityUrl,
-              },
+              url: config.communityUrl,
             },
             {
               text: "Follow X",
@@ -59,8 +53,8 @@ bot.onText(/\/start/, async (msg) => {
             },
           ],
         ],
-			},
-		});
+      },
+    });
   } catch (error) {
     console.error("onText error", error);
   }
