@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const TelegramBot = require("node-telegram-bot-api");
 const config = require("./config");
+const path = require('path');
 
 const bot = new TelegramBot(config.botToken, {
   polling: false,
@@ -57,37 +58,6 @@ bot.onText(/\/start/, async (msg) => {
         ],
 			},
 		});
-    bot.sendMessage(
-      chatId,
-      "",
-      {
-        parse_mode: "Markdown",
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "Bridge",
-                web_app: {
-                  url: config.bridgeUrl,
-                },
-              },
-            ],
-            [
-              {
-                text: "Join Community",
-                web_app: {
-                  url: config.communityUrl,
-                },
-              },
-              {
-                text: "Follow X",
-                url: config.twitterUrl,
-              },
-            ],
-          ],
-        },
-      }
-    );
   } catch (error) {
     console.error("onText error", error);
   }
