@@ -26,9 +26,40 @@ console.log("webhookUrl:", webhookUrl);
 bot.onText(/\/start/, async (msg) => {
   try {
     const chatId = msg.chat.id;
+    const relativePath = 'images/banner-img.png';
+		const absolutePath = path.resolve(__dirname, relativePath);
+    bot.sendPhoto(chatId, absolutePath, {
+      parse_mode: "Markdown",
+			caption:
+				'eBridge enables secure, fast, and cost-effective asset transfers between aelf and other blockchain ecosystems.',
+			reply_markup: {
+				inline_keyboard: [
+          [
+            {
+              text: "Bridge",
+              web_app: {
+                url: config.bridgeUrl,
+              },
+            },
+          ],
+          [
+            {
+              text: "Join Community",
+              web_app: {
+                url: config.communityUrl,
+              },
+            },
+            {
+              text: "Follow X",
+              url: config.twitterUrl,
+            },
+          ],
+        ],
+			},
+		});
     bot.sendMessage(
       chatId,
-      "eBridge enables secure, fast, and cost-effective asset transfers between aelf and other blockchain ecosystems.\n \nJoin [our group](https://t.me/eBridge_official) for support.",
+      "",
       {
         parse_mode: "Markdown",
         reply_markup: {
@@ -40,8 +71,16 @@ bot.onText(/\/start/, async (msg) => {
                   url: config.bridgeUrl,
                 },
               },
+            ],
+            [
               {
-                text: " Twitter",
+                text: "Join Community",
+                web_app: {
+                  url: config.communityUrl,
+                },
+              },
+              {
+                text: "Follow X",
                 url: config.twitterUrl,
               },
             ],
