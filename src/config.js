@@ -2,20 +2,20 @@ const NETWORK_ENV = process.env.BUILD_ENV;
 
 const configMap = {
   mainnet: {
-    appUrl: "https://ebridge.exchange/bridge",
-    bridgeUrl: "https://ebridge.exchange/bridge",
+    appUrl: "https://app.ebridge.exchange/bridge",
+    bridgeUrl: "https://app.ebridge.exchange/bridge",
     twitterUrl: "https://x.com/eBridge_Web3",
     communityUrl: "https://t.me/eBridge_official",
     botToken: process.env.TELEGRAM_BOT_TOKEN_MAINNET,
-    serviceUrl: "https://ebridge.exchange",
+    serviceUrl: "https://app.ebridge.exchange",
   },
   testnet: {
-    appUrl: "https://test.ebridge.exchange/bridge",
-    bridgeUrl: "https://test.ebridge.exchange/bridge",
+    appUrl: "https://test-app.ebridge.exchange/bridge",
+    bridgeUrl: "https://test-app.ebridge.exchange/bridge",
     twitterUrl: "https://x.com/eBridge_Web3",
     communityUrl: "https://t.me/eBridge_official",
     botToken: process.env.TELEGRAM_BOT_TOKEN_TESTNET,
-    serviceUrl: "https://test.ebridge.exchange",
+    serviceUrl: "https://test-app.ebridge.exchange",
   },
 };
 
