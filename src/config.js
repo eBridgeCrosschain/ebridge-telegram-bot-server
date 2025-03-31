@@ -7,7 +7,7 @@ const configMap = {
     twitterUrl: "https://x.com/eBridge_Web3",
     communityUrl: "https://t.me/eBridge_official",
     botToken: process.env.TELEGRAM_BOT_TOKEN_MAINNET,
-    serviceUrl: "https://app.ebridge.exchange",
+    serviceUrl: "https://ebridge.exchange",
   },
   testnet: {
     appUrl: "https://test-app.ebridge.exchange/bridge",
